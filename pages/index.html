@@ -4,16 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
+    <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/search.css">
+    <link rel="stylesheet" href="../styles/trending.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
 <body>
+    <div id="top-line"></div>
     <header>
-
+        <img src="../images/header/logo-desktop.svg" alt="logo">
+        <input id="btn-menu" type="checkbox">
+            <label id="btn-menu-label" for="btn-menu"><span class="navicon"></span></label>
+        <nav id="nav-link">
+            <ul>
+                <li><a href="#episodes">Modo Nocturno</a><hr class="line"/></li>
+                <li><a href="#where">Favoritos</a><hr class="line"/></li>
+                <li><a href="#interview">Mis GIFOS</a><hr class="line"/></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY
+        <section id="search">
+            <section id="search-first">
+                <h1 class="search-title">Inspírate, busca, guarda, y crea los mejores <strong style="color: var(--second-color);">GIFOS</strong></h1>
+                <div class="search-container">
+                    <img class="search-image" src="../images/search/ilustra_header.svg" alt="welcome to search">
+                    <div class="search-input-container">
+                        <input id="search-input" type="text" placeholder="Busca GIFOS y más">
+                        <img src="../images/search/icon-search.svg" alt="icon search">
+                    </div>
+                </div>
+                <div class="search-trending-text">
+                    <p>Trending:</p>
+                    <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
+                </div>
+            </section>
+
+            <section id>
+                
+            </section>
+
+        </section>
+        <section id="trending">
+            <div id="trending-title-container">
+                <h1 class="trending-title">Trending GIFOS</h1>
+                <p class="trending-text">Mira los últimos GIFOS de nuestra comunidad.</p>
+            </div>
+        </section>
     </main>
+
     <footer>
-        
+        <div class="share-with-container">
+            <p>Compartir en:</p>
+            <div class="social-icon-container">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+                <a href="http://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+            </div>
+        </div>
+        <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
 </body>
 </html>
