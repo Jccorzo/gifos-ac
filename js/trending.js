@@ -8,11 +8,10 @@ const fillTrendings = async () => {
     const trendingGifs = await getTrendingGifs()
     const trendingsContainer = document.getElementById('trending-gif-container')
     trendingGifs.data.forEach(gif => {
-        const trendindImage = document.createElement("img")
-        trendindImage.setAttribute("src", gif.images.original.url)
-        trendindImage.setAttribute("alt", gif.title)
-        trendindImage.setAttribute("class", "trending-gif")
-        trendingsContainer.appendChild(trendindImage)
+        const gifContainer = document.createElement("div")
+        gifContainer.setAttribute("class", "gif")
+        gifContainer.innerHTML= `<img src="${gif.images.original.url}" alt="${gif.title}" class="trending-gif">`
+        trendingsContainer.appendChild(gifContainer)
     })
 }
 

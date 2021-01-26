@@ -26,6 +26,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+
 header img {
   margin: 16px;
   height: 48.8px;
@@ -154,6 +155,10 @@ header a {
     font-weight: bold;
 }
 
+header a:hover {
+  cursor: pointer;
+}
+
 header hr {
   width: 41px;
 }
@@ -164,7 +169,7 @@ header hr {
     width: 100%;
 }
 
-#new-gift-link {
+#change-to-create-gif {
   display: flex;
 }
 
@@ -197,6 +202,25 @@ header hr {
   top: 19px;
   right: 24px;
   transform: rotate(90deg);
+}
+
+#new-gift-button:hover {
+  background-color: var(--main-color);
+}
+
+#new-gift-button:hover::after{
+  content: '';
+  background-color: white;
+}
+
+#new-gift-button:hover::before {
+  content: '';
+  background-color: white;
+}
+
+#new-gift-button:active {
+  background-color: #9CAFC3;
+  border: none;
 }
 
 footer {

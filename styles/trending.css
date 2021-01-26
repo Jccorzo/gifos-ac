@@ -37,6 +37,10 @@
   width: 357px;
 }
 
+#trending-gif-container{
+  display: flex;
+}
+
 @media screen and (min-width:768px){
   .trending-title{
     font-size: 25px;

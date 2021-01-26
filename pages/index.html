@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/search.css">
     <link rel="stylesheet" href="../styles/trending.css">
+    <link rel="stylesheet" href="../styles/gif.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
@@ -19,14 +20,14 @@
         <nav id="nav-link">
             <ul>
                 <li><a id="change-theme">Modo Nocturno</a><hr class="line"/></li>
-                <li><a href="#where">Favoritos</a><hr class="line"/></li>
-                <li><a href="#interview">Mis GIFOS</a><hr class="line"/></li>
-                <li><a id="new-gift-link" href=""><i id="new-gift-button"></i></a></li>
+                <li><a id="change-to-favorites">Favoritos</a><hr class="line"/></li>
+                <li><a id="change-to-myGifs">Mis GIFOS</a><hr class="line"/></li>
+                <li><a id="change-to-create-gif"><i id="new-gift-button"></i></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section id="search">
             <section id="search-first">
                 <h1 class="search-title">Inspírate, busca, guarda, y crea los mejores <strong style="color: var(--second-color);">GIFOS</strong></h1>
@@ -43,7 +44,7 @@
                 </div>
             </section>
 
-            <section id>
+            <section id="results">
                 
             </section>
 
@@ -53,9 +54,7 @@
                 <h1 class="trending-title">Trending GIFOS</h1>
                 <p class="trending-text">Mira los últimos GIFOS de nuestra comunidad.</p>
             </section>
-            <section id="trending-gif-container">
-
-            </section>
+            <section id="trending-gif-container"></section>
         </section>
     </main>
 
@@ -71,8 +70,10 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
     <script src="../js/theme.js"> </script>
+    <script src="../js/helper.js"></script>
     <script src="../js/localStorage.js"> </script>
-    <script src="../js/initialize.js"> </script>
     <script src="../js/trending.js"> </script>
+    <script src="../js/changePage.js"></script>
+    <script src="../js/initialize.js"> </script>
 </body>
 </html>
