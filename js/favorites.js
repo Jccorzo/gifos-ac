@@ -5,9 +5,9 @@ const loadFavorites = () => {
 
     } else {
         favoritesContainer.innerHTML = `
-            <div>
+            <div id="noResultsContainer">
                 <img src="../images/favorites/icon-fav-sin-contenido.svg" alt="icon fav sin contenido">
-                <h2>¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</h2>
+                <h2 class="no-results">¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!</h2>
             </div>
         `
     }
