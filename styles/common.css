@@ -287,9 +287,25 @@ footer .fa {
   max-width: 431px;
 }
 
+.button{
+  border: 1px solid var(--main-color);
+    border-radius: 20px;
+    background-color: white;
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--roboto);
+    padding: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 600px) {
   #change-to-create-gif {
     display: flex;
+    visibility: visible;
   }
 
   header img {

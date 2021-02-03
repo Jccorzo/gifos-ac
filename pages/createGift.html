@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
     <link rel="stylesheet" href="../styles/common.css">
+    <link rel="stylesheet" href="../styles/createGift.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
@@ -25,7 +26,34 @@
     </header>
 
     <main id="main">
-        
+        <div id="cameraContainer">
+            <img src="../images/createGif/camara.svg" alt="camera">
+            <img src="../images/createGif/element-luz-camara.svg" alt="light camera">
+        </div>
+        <div>
+            <div id="stepsContainer">
+                <div id="videoContainer">
+                    <div id="upperLeft" class="square"></div>
+                    <div id="upperRight" class="square"></div>
+                    <div id="downLeft" class="square"></div>
+                    <div id="downRight" class="square"></div>
+                    <div id="mainVideo">
+                        <h1 class="title">Aquí podrás <br> crear tus propios <strong class="GIFOS">GIFOS</strong></h1>
+                        <p class="text">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                    </div>
+                </div>
+                <div id="numbersContainer">
+                    <button id="firstStep" class="numberButton">1</button>
+                    <button id="secondStep" class="numberButton">2</button>
+                    <button id="thirdStep" class="numberButton">3</button>
+                </div>
+                <hr id="line">
+                <button id="start" class="button">Comenzar</button>
+            </div>
+        </div>
+        <div id="peliculaSvgContainer">
+            <img id="peliculaSvg" src="../images/createGif/pelicula.svg" alt="pelicula">
+        </div>
     </main>
 
     <footer>
@@ -41,6 +69,5 @@
     </footer>
     <script src="../js/theme.js"> </script>
     <script src="../js/localStorage.js"> </script>
-    <script src="../js/trending.js"> </script>
 </body>
 </html>
