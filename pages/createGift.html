@@ -10,7 +10,7 @@
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
 <body>
-    <div id="top-line"></div>
+    <div class="top-line"></div>
     <header>
         <a href="./index.html"><img src="../images/header/logo-desktop.svg" alt="logo"></a>
         <input id="btn-menu" type="checkbox">
@@ -38,17 +38,23 @@
                     <div id="downLeft" class="square"></div>
                     <div id="downRight" class="square"></div>
                     <div id="mainVideo">
-                        <h1 class="title">Aquí podrás <br> crear tus propios <strong class="GIFOS">GIFOS</strong></h1>
-                        <p class="text">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                        <h1 id="videoTitle" class="title">Aquí podrás <br> crear tus propios <strong class="GIFOS">GIFOS</strong></h1>
+                        <p id="videoText" class="text">¡Crea tu GIFO en sólo 3 pasos! <br> (sólo necesitas una cámara para grabar un video)</p>
+                        <video id="video" style="display: none; height: 320px; width: 480px;"></video>
                     </div>
                 </div>
-                <div id="numbersContainer">
-                    <button id="firstStep" class="numberButton">1</button>
-                    <button id="secondStep" class="numberButton">2</button>
-                    <button id="thirdStep" class="numberButton">3</button>
+                <div id="stepsTimeContainer">
+                    <div id="numbersContainer">
+                        <button id="firstStep" class="numberButton">1</button>
+                        <button id="secondStep" class="numberButton">2</button>
+                        <button id="thirdStep" class="numberButton">3</button>
+                    </div>
+                    <div id="timeContainer">
+                        <p id="hours" class="time">00</p>:<p id="minutes" class="time">00</p>:<p id="segs" class="time">00</p>
+                    </div>
                 </div>
                 <hr id="line">
-                <button id="start" class="button">Comenzar</button>
+                <button id="start" class="button">COMENZAR</button>
             </div>
         </div>
         <div id="peliculaSvgContainer">
@@ -67,7 +73,11 @@
         </div>
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
+    <div class="top-line"></div>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="../js/theme.js"> </script>
     <script src="../js/localStorage.js"> </script>
+    <script src="../js/common.js"></script>
+    <script src="../js/createGif.js"></script>
 </body>
 </html>

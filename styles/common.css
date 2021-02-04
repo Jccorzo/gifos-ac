@@ -165,7 +165,7 @@ header hr {
   width: 41px;
 }
 
-#top-line {
+.top-line {
   background-color: #572ee5;
   height: 5px;
   width: 100%;

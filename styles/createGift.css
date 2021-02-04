@@ -39,17 +39,22 @@
     align-self: flex-end;
 }
 
+#numbersContainer{
+    grid-column: 2/3;
+    justify-self: center;
+}
+
 #numbersContainer > * {
     margin: 0 10px;
 }
 
 .numberButton {
+    background-color: white;
+    color: var(--main-color);
     border: 1px solid var(--main-color);
     height: 32px;
     width: 32px;
     border-radius: 16px;
-    background-color: white;
-    color: var(--main-color);
     font-size: 18px;
     font-weight: 500;
     font-family: var(--roboto);
@@ -127,4 +132,38 @@
 
 .GIFOS {
     color: #50E3C2;
+}
+
+.selected {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.moodVideo {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#stepsTimeContainer {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#timeContainer{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    grid-column: 3/4;
+}
+
+.time {
+    font-family: var(--montserrat);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--main-color);
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 22px;
 }
