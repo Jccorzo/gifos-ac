@@ -8,6 +8,7 @@ const video = document.getElementById("video");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("segs");
+const repeat = document.getElementById("repeatContainer");
 let n = 0;
 let h = 0;
 let m = 0;
@@ -30,10 +31,30 @@ const stopRecording = () => {
     start.addEventListener("click", uploadGif)
     start.innerHTML = "SUBIR GIFO"
     clearInterval(intervarlId)
+
+    hours.style.display = "none";
+    seconds.style.display = "none";
+    minutes.style.display = "none";
+    repeat.style.display = "flex";
+}
+
+const repeatRecord = () => {
+
 }
 
 const uploadGif = () => {
-
+    const form = new FormData();
+    form.append("file", recorder.getBlob(), 'myGif');
+    fetch('https://upload.giphy.com/v1/gifs?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3', {
+        method: 'POST',
+        //mode: 'no-cors',
+        body: form
+    }).then(async(res) => {
+        const data = await res.json();
+        saveGif(data.data.id)
+    }).catch(err => {
+        console.log("ERRR", err)
+    })
 }
 
 function count(){
@@ -41,8 +62,8 @@ function count(){
     m = Math.floor(n / 60) % 60;
     h = Math.floor(n / 3600);
     seconds.innerHTML = displayTwoZeros(s)
-    minutes.innerHTML = displayTwoZeros(m)
-    hours.innerHTML = displayTwoZeros(h)
+    minutes.innerHTML = displayTwoZeros(m)+":"
+    hours.innerHTML = displayTwoZeros(h)+":"
     s++;
     n++;
 }
@@ -86,3 +107,4 @@ const startExperience = () => {
 }
 
 start.addEventListener("click", startExperience)
+repeat.addEventListener("click", repeatRecord)

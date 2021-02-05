@@ -60,10 +60,6 @@
     font-family: var(--roboto);
 }
 
-.numberButton:hover {
-    cursor: pointer;
-}
-
 #line {
     width: 795px;
     height: 5px;
@@ -166,4 +162,20 @@
     letter-spacing: 0;
     text-align: center;
     line-height: 22px;
+}
+
+#repeat{
+    font-family: Montserrat-Bold;
+    font-size: 13px;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+#repeatContainer {
+    cursor: pointer;
+}
+
+#repeatContainer:hover {
+    opacity: 0.7;
 }

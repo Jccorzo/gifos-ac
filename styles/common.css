@@ -302,6 +302,10 @@ footer .fa {
   cursor: pointer;
 }
 
+.button:active {
+  transform: translateY(3px);
+}
+
 @media screen and (min-width: 600px) {
   #change-to-create-gif {
     display: flex;
