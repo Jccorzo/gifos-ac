@@ -1,6 +1,7 @@
 const start = document.getElementById("start");
 const stepOne = document.getElementById("firstStep");
 const stepTwo = document.getElementById("secondStep")
+const stepThree = document.getElementById("thirdStep")
 const title = document.getElementById("videoTitle");
 const text = document.getElementById("videoText");
 const videoContainer = document.getElementById("mainVideo")
@@ -9,13 +10,17 @@ const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("segs");
 const repeat = document.getElementById("repeatContainer");
-let n = 0;
-let h = 0;
-let m = 0;
-let s = 0;
-let recorder;
-var intervarlId;
+const card = document.getElementById("card");
+const uploadText = document.getElementById("uploadText");
+const uploadImage = document.getElementById("uploadImage");
+const optionsCard = document.getElementById("optionsCard");
+const link = document.getElementById("link")
+const download = document.getElementById("download")
 
+let n = 0, h = 0, m = 0, s = 0;
+let recorder;
+let intervarlId;
+let gifId;
 
 const recordGif = () => {
     start.innerHTML = "FINALIZAR"
@@ -39,31 +44,53 @@ const stopRecording = () => {
 }
 
 const repeatRecord = () => {
-
+    start.innerHTML = "GRABAR"
+    start.removeEventListener("click", uploadGif)
+    start.addEventListener("click", recordGif)
+    n = 0, h = 0, m = 0, s = 0;
+    repeat.style.display = "none"
+    hours.innerHTML = "00:"
+    hours.style.display = "block"
+    minutes.innerHTML = "00:"
+    minutes.style.display = "block"
+    seconds.innerHTML = "00"
+    seconds.style.display = "block"
 }
 
-const uploadGif = () => {
+const uploadGif = async() => {
     const form = new FormData();
     form.append("file", recorder.getBlob(), 'myGif');
-    fetch('https://upload.giphy.com/v1/gifs?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3', {
-        method: 'POST',
-        //mode: 'no-cors',
-        body: form
-    }).then(async(res) => {
-        const data = await res.json();
+    try {
+        //Estamos subi
+        card.style.display = "flex"
+        stepTwo.classList.remove("selected")
+        stepThree.classList.add("selected")
+        start.style.display = "none"
+        repeat.style.display = "none";
+        const response = await fetch('https://upload.giphy.com/v1/gifs?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3', {
+            method: 'POST',
+            body: form
+        })
+        const data = await response.json()
+        gifId = data.data.id;
         saveGif(data.data.id)
-    }).catch(err => {
+        optionsCard.style.display = "block"
+        uploadImage.src = "../images/createGif/ok.svg"
+        uploadText.innerHTML = "GIFO subido con éxito"
+        
+    } catch (err) {
         console.log("ERRR", err)
-    })
+        alert("Ocurrió un error subiendo u Gif, por favor vuelve a intentarlo")
+    } 
 }
 
-function count(){
+function count() {
     s = s > 59 ? 0 : s;
     m = Math.floor(n / 60) % 60;
     h = Math.floor(n / 3600);
     seconds.innerHTML = displayTwoZeros(s)
-    minutes.innerHTML = displayTwoZeros(m)+":"
-    hours.innerHTML = displayTwoZeros(h)+":"
+    minutes.innerHTML = displayTwoZeros(m) + ":"
+    hours.innerHTML = displayTwoZeros(h) + ":"
     s++;
     n++;
 }
@@ -106,5 +133,15 @@ const startExperience = () => {
     })
 }
 
+const openGifUrl = async () => {
+    const gif = await getGif(gifId);
+    window.open(gif.data.url)
+}
+
+download.addEventListener("click", async () => {
+    const gif = await getGif(gifId)
+    await downloadGif(gif.data.images.downsized.url)
+})
+link.addEventListener("click", openGifUrl)
 start.addEventListener("click", startExperience)
 repeat.addEventListener("click", repeatRecord)
