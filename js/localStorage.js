@@ -13,3 +13,12 @@ const saveGif = (id) => {
         setItem("gifs", id)
     }
 }
+
+const saveFavorites = (id) => {
+    const gifs = getItem('favorites')
+    if (gifs) {
+        setItem("gifs", gifs + "," + id)
+    } else {
+        setItem("gifs", id)
+    }
+}

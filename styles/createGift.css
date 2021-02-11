@@ -208,15 +208,11 @@
     cursor: pointer;
 }
 
-#optionsCard {
-    margin: 5px 5px;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-#optionsCard > * {
-    margin: 5px;
+#card {
+    height: 320px; 
+    width: 430px;
+    top: none;
+    display: block;
 }
 
 #uploadImage {

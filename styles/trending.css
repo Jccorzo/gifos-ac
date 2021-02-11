@@ -41,6 +41,19 @@
   display: flex;
 }
 
+#trendingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.slider {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
 @media screen and (min-width:768px){
   .trending-title{
     font-size: 25px;
@@ -48,5 +61,9 @@
 
   .trending-text {
     font-size: 18px;
+  }
+
+  .slider {
+    display: block;
   }
 }

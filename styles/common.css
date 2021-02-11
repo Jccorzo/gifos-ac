@@ -306,6 +306,63 @@ footer .fa {
   transform: translateY(3px);
 }
 
+.card {
+    height: 100%; 
+    width: 100%;
+    top: 0;
+    background-color: rgba(87,46,229,0.6);
+    z-index: 2;
+    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+
+.gif:hover > .card {
+  display: block;
+}
+
+.optionsCard {
+  margin: 5px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.optionsCard > * {
+  margin: 5px;
+  opacity: 0.6;
+}
+
+.optionsCard > *:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.infoGifContainer{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+}
+
+.userGif{
+  font-family: var(--roboto);
+  font-size: 15px;
+  color: #FFFFFF;
+  margin: 3px;
+}
+
+.userTitle{
+  font-family: var(--roboto);
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  margin: 3px;
+}
+
 @media screen and (min-width: 600px) {
   #change-to-create-gif {
     display: flex;
