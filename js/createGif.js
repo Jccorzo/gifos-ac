@@ -57,7 +57,7 @@ const repeatRecord = () => {
     seconds.style.display = "block"
 }
 
-const uploadGif = async() => {
+const uploadGif = async () => {
     const form = new FormData();
     form.append("file", recorder.getBlob(), 'myGif');
     try {
@@ -67,21 +67,17 @@ const uploadGif = async() => {
         stepThree.classList.add("selected")
         start.style.display = "none"
         repeat.style.display = "none";
-        const response = await fetch('https://upload.giphy.com/v1/gifs?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3', {
-            method: 'POST',
-            body: form
-        })
-        const data = await response.json()
+        const data = await uploadNewGif(form)
         gifId = data.data.id;
         saveGif(data.data.id)
         optionsCard.style.display = "block"
         uploadImage.src = "../images/createGif/ok.svg"
         uploadText.innerHTML = "GIFO subido con éxito"
-        
+
     } catch (err) {
         console.log("ERRR", err)
         alert("Ocurrió un error subiendo u Gif, por favor vuelve a intentarlo")
-    } 
+    }
 }
 
 function count() {

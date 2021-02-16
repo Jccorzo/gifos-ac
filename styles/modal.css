@@ -1,0 +1,107 @@
+/* The Modal (background) */
+#modal {
+  display: flex;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  margin: auto; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: white; /* Fallback color */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  align-items: center;
+}
+
+/* The Close Button */
+#close {
+  color: var(--main-color);
+  font-size: 28px;
+  margin: 5px;
+  align-self: flex-end;
+}
+
+#close:hover,
+#close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalImage {
+  height: 245px;
+  width: 318px;
+  align-self: center;
+}
+
+#modalUser {
+  font-family: var(--roboto);
+  font-size: 15px;
+  color: #000000;
+}
+
+#modalTitle {
+  font-family: var(--montserrat);
+  font-weight: 700;
+  font-size: 16px;
+  color: #000000;
+}
+
+.modalIcon {
+  height: 18px;
+  width: 20px;
+}
+
+#modalSubcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3%;
+  max-width: 695px;
+  width: 100%;
+}
+
+#modalSubcontainer > * {
+  margin-top: 5px;
+}
+
+#modalInfoContainer {
+  width: 50%;
+}
+
+@media screen and (min-width: 600px) {
+  #modalImage {
+    width: 472px;
+    height: 350px;
+  }
+
+  .modalIcon {
+    height: 24px;
+    width: 26px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #modalImage {
+    width: 695px;
+    height: 385px;
+  }
+  .modalIcon {
+    height: 36px;
+    width: 36px;
+  }
+
+  .modal-content{
+      width: 70%;
+  }
+  
+}

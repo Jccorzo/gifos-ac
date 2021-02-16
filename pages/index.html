@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/search.css">
     <link rel="stylesheet" href="../styles/trending.css">
     <link rel="stylesheet" href="../styles/gif.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
@@ -33,9 +34,18 @@
                 <h1 class="search-title">Inspírate, busca, guarda, y crea los mejores <strong style="color: var(--second-color);">GIFOS</strong></h1>
                 <div class="search-container">
                     <img class="search-image" src="../images/search/ilustra_header.svg" alt="welcome to search">
-                    <div class="search-input-container">
-                        <input id="search-input" type="text" placeholder="Busca GIFOS y más">
-                        <img src="../images/search/icon-search.svg" alt="icon search">
+                    <div id="search-input-container" class="search-input-container">
+                        <div id="searchContainer">
+                            <img id="left-search" class="leftSearch" src="../images/search/icon-search.svg" alt="icon search">
+                            <div id="right-side">
+                                <input id="search-input" type="text" placeholder="Busca GIFOS y más">
+                                <img id="search-icon" src="../images/search/icon-search.svg" alt="icon search">
+                            </div>
+                        </div>
+                        <hr id="separator">
+                        <div id="suggestionsContainer">
+
+                        </div>
                     </div>
                 </div>
                 <div class="search-trending-text">
@@ -74,9 +84,11 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
     <div class="top-line"></div>
+    <script src="../js/gifMethods.js"></script>
     <script src="../js/common.js"> </script>
     <script src="../js/theme.js"> </script>
     <script src="../js/localStorage.js"> </script>
     <script src="../js/trending.js"> </script>
+    <script src="../js/search.js"></script>
 </body>
 </html>
