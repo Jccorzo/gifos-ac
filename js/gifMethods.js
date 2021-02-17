@@ -5,7 +5,7 @@ const autocomplete = async (word) => {
 }
 
 const searchByTerm = async (word, offset = 0) => {
-    const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&q=${word}&offset=${offset}`)
+    const response = await fetch(`https://api.giphy.com/v1/gifs/search?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&q=${word}&offset=${offset}&limit=12`)
     const data = await response.json()
     return data
 }

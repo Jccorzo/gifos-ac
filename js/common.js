@@ -21,7 +21,7 @@ const displayTwoZeros = (number) => {
 const maximizeGif = (gif) => {
     const body = document.getElementsByTagName("body")[0]
     const modal = document.createElement("div")
-    modal.setAttribute("id","modal")
+    modal.setAttribute("id", "modal")
     modal.innerHTML = `
             <div class="modal-content">
             <span id="close" class="close">&times;</span>
@@ -44,30 +44,30 @@ const maximizeGif = (gif) => {
     const downloadButton = document.getElementById(`down-${gif.id}-modal`);
     const close = document.getElementById("close");
 
-    favoriteButton.addEventListener("click",() => {
+    favoriteButton.addEventListener("click", () => {
         saveFavorites(gif.id)
     })
 
-    downloadButton.addEventListener("click", async() => {
+    downloadButton.addEventListener("click", async () => {
         const gifo = await getGif(gif.id)
         await downloadGif(gifo.data.images.downsized.url)
     })
-    
-    close.addEventListener("click",() => {
+
+    close.addEventListener("click", () => {
         modal.remove()
     })
-    
+
 }
 
 
-const fillGifs = async (gifs, containerId) => {
+const fillGifs = async (gifs, containerId, trending) => {
     const gifsContainer = document.getElementById(containerId)
-    gifs.data.forEach(gif => {
+    gifs.forEach(gif => {
         const gifContainer = document.createElement("div")
-        gifContainer.setAttribute("class", "gif")
+        gifContainer.setAttribute("class", trending ? "gifTrending" : "gif")
         gifContainer.setAttribute("id", gif.id)
         gifContainer.innerHTML = `
-        <img src="${gif.images.original.url}" alt="${gif.title}" class="trending-gif">
+        <img src="${gif.images.original.url}" alt="${gif.title}" class="${trending ? "trending-gif" : "gif-image"}">
         <div class="card">
             <div class="optionsCard" >
                 <img id="fav-${gif.id}" src="../images/common/icon-fav-hover.svg" alt="fav">

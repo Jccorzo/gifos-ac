@@ -27,7 +27,6 @@
             </ul>
         </nav>
     </header>
-
     <main id="main">
         <section id="search">
             <section id="search-first">
@@ -43,21 +42,24 @@
                             </div>
                         </div>
                         <hr id="separator">
-                        <div id="suggestionsContainer">
-
-                        </div>
+                        <div id="suggestionsContainer"></div>
                     </div>
                 </div>
-                <div class="search-trending-text">
+                <div id="search-trending-text" class="search-trending-text">
                     <p>Trending:</p>
                     <p>Reactions, Entertainment, Sports, Stickers, Artists</p>
                 </div>
+                <hr id="separator2" class="separator">
             </section>
-
             <section id="results">
-                
+                <h1 id="resultTitle"></h1>
+                <div id="resultGifs"></div>
+                <div id="noResults">
+                    <img id="noResultsImage" src="../images/search/icon-busqueda-sin-resultado.svg" alt="sin resultado">
+                    <p id="noResultsText">Intenta con otra búsqueda.</p>
+                </div>
+                <button id="showMore" class="showMore">VER MÁS</button>
             </section>
-
         </section>
         <section id="trending">
             <section id="trending-title-container">
@@ -71,7 +73,6 @@
             </section>
         </section>
     </main>
-
     <footer>
         <div class="share-with-container">
             <p>Compartir en:</p>

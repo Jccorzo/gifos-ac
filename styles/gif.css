@@ -1,17 +1,36 @@
 .gif {
     background-repeat: no-repeat;
     background-size: contain;
+    width: 156px;
+    height: 120px;
+    position: relative;
+    margin: 15px;
+}
+
+.gifTrending {
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 357px;
     height: 275px;
     position: relative;
     margin: 15px;
 }
 
-.gifOptions {
-    width: 357px;
-    height: 275px;
-    background-color: var(--main-color);
-    opacity: 0.6;
-    display: grid;
-    grid-template-rows: repeat(4,1fr);
+.gif-image {
+    width: 156px;
+    height: 120px;
+}
+
+@media screen and (min-width:768px){
+    .gif-image, .gif {
+        width: 186px;
+        height: 150px;
+    }
+}
+
+@media screen and (min-width:1140px) {
+    .gif-image, .gif {
+        width: 260px;
+        height: 200px;
+    }
 }

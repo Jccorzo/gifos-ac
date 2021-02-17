@@ -97,6 +97,101 @@
     display: none;
 }
 
+.separator {
+    height: 2px;
+    width: 220px;
+    background-color: rgba(156,175,195,0.4);
+    align-self: center;
+    display: none;
+}
+
+#separator2 { 
+    opacity: 0.5;
+    margin-top: 7%;
+}
+
+.newSugest {
+    display: flex;
+    align-items: center;
+    margin: 10px 13px;
+}
+
+.newSugest:hover {
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+
+.suggestImage {
+    opacity: 0.3;
+    height: 16px;
+    width: 16px;
+}
+
+.suggestText {
+    font-family: var(--roboto);
+    font-size: 16px;
+    color: #9CAFC3;
+    text-align: left;
+    margin-left: 15px;
+}
+
+#noResults {
+    display: none;
+    align-items: center;
+    flex-direction: column;
+}
+
+#noResults > * {
+    margin: 15px;
+}
+
+#noResultsImage {
+    height: 150px;
+    width: 150px;
+}
+
+#noResultsText {
+    font-family: var(--montserrat);
+    font-weight: bold;
+    font-size: 22px;
+    color: #50E3C2;
+    text-align: center;
+    line-height: 25px;
+}
+
+#resultGifs {
+    display: none;
+    grid-template-columns: repeat(2,130px);
+    grid-template-rows: repeat(2,160px);
+}
+
+#results {
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#results > * {
+    margin: 3% 0;
+}
+
+#resultTitle {
+    font-family: var(--montserrat);
+    font-weight: bold;
+    font-size: 25px;
+    color: #572EE5;
+    text-align: center;
+    line-height: 30px;
+}
+
+@media screen and (min-width:600px) {
+    #resultGifs {
+        grid-template-columns: repeat(3,160px);
+        grid-template-rows: repeat(3,130px);
+    }
+}
+
 @media screen and (min-width:768px){
     .search-title {
         font-size: 35px;
@@ -110,4 +205,20 @@
     .search-trending-text > p:nth-child(2) {
         font-size: 16px;
     }
+
+    #resultGifs {
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(3,170px);
+    }
+
+    #resultTitle {
+        font-size: 35px;
+    }
+}
+
+@media screen and (min-width:1140px){
+    #resultGifs {
+        grid-template-columns: repeat(4,275px);
+        grid-template-rows: repeat(3,215px);
+    }   
 }
