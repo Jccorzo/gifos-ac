@@ -16,6 +16,12 @@ const getTrendingGifs = async () => {
     return data;
 }
 
+const getTrending = async () => {
+    const response = await fetch('https://api.giphy.com/v1/trending/searches?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3')
+    const data = await response.json()
+    return data;
+}
+
 const uploadNewGif = async (form) => {
     const response = await fetch('https://upload.giphy.com/v1/gifs?api_key=8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J&limit=3', {
         method: 'POST',

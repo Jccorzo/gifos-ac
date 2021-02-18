@@ -14,6 +14,7 @@ const resultGifs = document.getElementById("resultGifs");
 const showMoreButton = document.getElementById("showMore");
 const noResults = document.getElementById("noResults");
 const resultsGifs = document.getElementById("resultGifs");
+const trendingSuggests = document.getElementById("trendingSuggests");
 
 search.addEventListener("input", async () => {
 
@@ -79,6 +80,7 @@ const getResults = async (term) => {
     } else {
         noResults.style.display = "none"
         resultsGifs.style.display = "grid"
+        cleanContainer("resultGifs")
         fillGifs(gifs.data, 'resultGifs', false)
     }
 }
@@ -87,3 +89,17 @@ const showMore = async (term, offset) => {
     const results = await searchByTerm(term, offset)
     fillGifs(results.data, 'resultGifs')
 }
+
+(async () => {
+    const suggest = await getTrending()
+    suggest.data.filter((_, index) => index < 5).forEach((value, index, array) => {
+        const trend = document.createElement("p")
+        trend.setAttribute("class", "trendSuggest")
+        trend.innerHTML = value + (index == array.length - 1 ? "." : ", ")
+        trendingSuggests.append(trend)
+        trend.addEventListener("click", async () => {
+            await getResults(value)
+        })
+    })
+    console.log(suggest)
+})()

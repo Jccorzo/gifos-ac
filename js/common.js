@@ -105,3 +105,10 @@ const fillGifs = async (gifs, containerId, trending) => {
 
     })
 }
+
+const cleanContainer = (containerId) => {
+    const gifsContainer = document.getElementById(containerId)
+    while (gifsContainer.firstChild) {
+        gifsContainer.removeChild(gifsContainer.firstChild);
+    }
+}
