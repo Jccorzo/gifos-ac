@@ -6,7 +6,7 @@ const suggestionsContainer = document.getElementById("suggestionsContainer");
 const separator = document.getElementById("separator");
 let initialOffset = 0;
 let totalPages = 0;
-let currentPage = 0;
+let globalTerm = "";
 const searchTrendingText = document.getElementById("search-trending-text");
 const separator2 = document.getElementById("separator2");
 const resultTitle = document.getElementById("resultTitle");
@@ -15,6 +15,10 @@ const showMoreButton = document.getElementById("showMore");
 const noResults = document.getElementById("noResults");
 const resultsGifs = document.getElementById("resultGifs");
 const trendingSuggests = document.getElementById("trendingSuggests");
+
+showMoreButton.addEventListener("click", async () => {
+    await showMore(globalTerm,initialOffset)
+})
 
 search.addEventListener("input", async () => {
 
@@ -74,20 +78,42 @@ const calculatePages = (pagination) => {
 const getResults = async (term) => {
     separator2.style.display = "block"
     resultTitle.innerHTML = term
-    const gifs = await searchByTerm(term, 0)
+    const gifs = await searchByTerm(term, 43)
+    console.log(gifs)
+    cleanContainer("resultGifs")
     if (gifs.data.length === 0) {
         noResults.style.display = "flex"
+        initialOffset = 0;
+        totalPages = 0;
     } else {
+        initialOffset += 12;
+        totalPages = calculatePages(gifs.pagination);
+        globalTerm = term;
         noResults.style.display = "none"
         resultsGifs.style.display = "grid"
-        cleanContainer("resultGifs")
         fillGifs(gifs.data, 'resultGifs', false)
+        if (gifs.pagination.count + gifs.pagination.offset < gifs.pagination.total_count) {
+            showMoreButton.style.display = "block"
+        }
     }
 }
 
 const showMore = async (term, offset) => {
     const results = await searchByTerm(term, offset)
-    fillGifs(results.data, 'resultGifs')
+    if (results.data.length > 0) {
+        fillGifs(results.data, 'resultGifs')
+    }
+    
+    if (results.pagination.count + results.pagination.offset <= results.pagination.total_count) {
+        showMoreButton.style.display = "block"
+    } else {
+        showMoreButton.style.display = "none"
+    }
+
+    if(results.pagination.total_count - results.pagination.count > 12){
+        initialOffset += 12;
+    }
+
 }
 
 (async () => {
@@ -101,5 +127,4 @@ const showMore = async (term, offset) => {
             await getResults(value)
         })
     })
-    console.log(suggest)
 })()
