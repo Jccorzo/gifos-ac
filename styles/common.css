@@ -328,6 +328,8 @@ footer .fa {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 3;
+  display: flex;
 }
 
 .optionsCard > * {
@@ -338,6 +340,16 @@ footer .fa {
 .optionsCard > *:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+.fav-image-container {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: white;
+  justify-content: center;
 }
 
 .infoGifContainer{

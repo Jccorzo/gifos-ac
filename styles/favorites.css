@@ -9,3 +9,9 @@
     width: 28px;
     height: 21px;
 }
+
+#favorites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

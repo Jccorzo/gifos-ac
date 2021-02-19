@@ -1,8 +1,9 @@
-const loadFavorites = () => {
-    const favorites = getItem('favorites');
+(() => {
+    const favorites = getFavorites('favorites');
     const favoritesContainer = document.getElementById('favoritesContainer');
-    if(isArrAndEmpty(favorites)){
-
+    if(favorites){
+        favoritesContainer.setAttribute("style","display: grid;")
+        fillGifs(favorites,"favoritesContainer")
     } else {
         favoritesContainer.innerHTML = `
             <div id="noResultsContainer">
@@ -11,6 +12,4 @@ const loadFavorites = () => {
             </div>
         `
     }
-}
-
-loadFavorites()
+})()

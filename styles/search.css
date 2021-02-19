@@ -148,12 +148,6 @@
     line-height: 25px;
 }
 
-#resultGifs {
-    display: none;
-    grid-template-columns: repeat(2,130px);
-    grid-template-rows: repeat(2,160px);
-}
-
 #results {
     margin: 30px 0;
     display: flex;
@@ -192,13 +186,6 @@
     cursor: pointer;
 }
 
-@media screen and (min-width:600px) {
-    #resultGifs {
-        grid-template-columns: repeat(3,160px);
-        grid-template-rows: repeat(3,130px);
-    }
-}
-
 @media screen and (min-width:768px){
     .search-title {
         font-size: 35px;
@@ -213,19 +200,7 @@
         font-size: 16px;
     }
 
-    #resultGifs {
-        grid-template-columns: repeat(3,200px);
-        grid-template-rows: repeat(3,170px);
-    }
-
     #resultTitle {
         font-size: 35px;
     }
-}
-
-@media screen and (min-width:1140px){
-    #resultGifs {
-        grid-template-columns: repeat(4,275px);
-        grid-template-rows: repeat(3,215px);
-    }   
 }

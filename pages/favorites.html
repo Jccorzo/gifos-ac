@@ -16,27 +16,23 @@
     <header>
         <a href="./index.html"><img src="../images/header/logo-desktop.svg" alt="logo"></a>
         <input id="btn-menu" type="checkbox">
-            <label id="btn-menu-label" for="btn-menu"><span class="navicon"></span></label>
+        <label id="btn-menu-label" for="btn-menu"><span class="navicon"></span></label>
         <nav id="nav-link">
             <ul>
                 <li><a id="change-theme">Modo Nocturno</a><hr class="line"/></li>
-                <li><a href="./favorites.html" id="change-to-favorites">Favoritos</a><hr class="line"/></li>
+                <li><a href="./favorites.html" id="change-to-favorites" style="color: #9CAFC3;">Favoritos</a><hr class="line"/></li>
                 <li><a href="./myGifs.html" id="change-to-myGifs">Mis GIFOS</a><hr class="line"/></li>
                 <li><a href="./createGift.html" id="change-to-create-gif"><i id="new-gift-button"></i></a></li>
             </ul>
         </nav>
     </header>
-
     <main id="main">
         <section id="favorites">
             <div id="favorites-title-container">
                 <img id="favorites-icon" src="../images/favorites/icon-favoritos.svg" alt="icon-favorites">
                 <h1 id="favorites-title" class="sub-title">Favoritos</h1>
             </div>
-            <div id="favoritesContainer">
-
-            </div>
-
+            <div id="favoritesContainer" class="gifsContainer"></div>
         </section>
         <section id="trending">
             <section id="trending-title-container">
@@ -50,7 +46,6 @@
             </section>
         </section>
     </main>
-
     <footer>
         <div class="share-with-container">
             <p>Compartir en:</p>
@@ -63,6 +58,7 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
     <div class="top-line"></div>
+    <script src="../js/gifMethods.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/localStorage.js"></script>
     <script src="../js/trending.js"></script>

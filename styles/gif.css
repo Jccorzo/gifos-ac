@@ -21,10 +21,27 @@
     height: 120px;
 }
 
+.gifsContainer { 
+    grid-template-columns: repeat(2,130px);
+    grid-template-rows: repeat(2,160px);
+}
+
+@media screen and (min-width:600px) {
+    .gifsContainer {
+        grid-template-columns: repeat(3,160px);
+        grid-template-rows: repeat(3,130px);
+    }
+}
+
 @media screen and (min-width:768px){
     .gif-image, .gif {
         width: 186px;
         height: 150px;
+    }
+
+    .gifsContainer {
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(3,170px);
     }
 }
 
@@ -33,4 +50,9 @@
         width: 260px;
         height: 200px;
     }
+
+    .gifsContainer {
+        grid-template-columns: repeat(4,275px);
+        grid-template-rows: repeat(3,215px);
+    } 
 }

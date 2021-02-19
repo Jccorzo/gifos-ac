@@ -4,7 +4,6 @@ const setItem = (key, value) => {
 
 const getItem = (key) => localStorage.getItem(key)
 
-
 const saveGif = (id) => {
     const gifs = getItem('gifs')
     if (gifs) {
@@ -14,11 +13,20 @@ const saveGif = (id) => {
     }
 }
 
-const saveFavorites = (id) => {
+const saveFavorites = (gif) => {
     const gifs = getItem('favorites')
     if (gifs) {
-        setItem("gifs", gifs + "," + id)
+        setItem("favorites", JSON.stringify([...JSON.parse(gifs), gif]))
     } else {
-        setItem("gifs", id)
+        setItem("favorites", JSON.stringify([gif]))
+    }
+}
+
+const getFavorites = () => {
+    const favorites = getItem("favorites")
+    if (favorites) {
+        return JSON.parse(favorites)
+    } else {
+        return null
     }
 }

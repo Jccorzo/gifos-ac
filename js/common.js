@@ -1,5 +1,5 @@
 const isArrAndEmpty = (arr) => {
-    if (Array.isArray(arr) && arr.length === 0) {
+    if (Array.isArray(JSON.parse(arr)) && arr.length === 0) {
         return true
     } else {
         return false
@@ -45,7 +45,9 @@ const maximizeGif = (gif) => {
     const close = document.getElementById("close");
 
     favoriteButton.addEventListener("click", () => {
-        saveFavorites(gif.id)
+        saveFavorites(gif)
+        favoriteButton.style.width = "20px"
+        favoriteButton.src = "../images/common/icon-fav-active.svg"
     })
 
     downloadButton.addEventListener("click", async () => {
@@ -59,7 +61,6 @@ const maximizeGif = (gif) => {
 
 }
 
-
 const fillGifs = async (gifs, containerId, trending) => {
     const gifsContainer = document.getElementById(containerId)
     gifs.forEach(gif => {
@@ -68,9 +69,11 @@ const fillGifs = async (gifs, containerId, trending) => {
         gifContainer.setAttribute("id", gif.id)
         gifContainer.innerHTML = `
         <img src="${gif.images.original.url}" alt="${gif.title}" class="${trending ? "trending-gif" : "gif-image"}">
-        <div class="card">
+        <div id="${gif.id}-card" class="card">
             <div class="optionsCard" >
-                <img id="fav-${gif.id}" src="../images/common/icon-fav-hover.svg" alt="fav">
+                <div class="fav-image-container">
+                    <img  id="fav-${gif.id}" src="../images/common/icon-fav-hover.svg" alt="fav">
+                </div>
                 <img id="down-${gif.id}" src="../images/common/icon-download-hover.svg" alt="download">
                 <img id="max-${gif.id}" src="../images/common/icon-max-hover.svg" alt="max">
             </div>
@@ -86,20 +89,26 @@ const fillGifs = async (gifs, containerId, trending) => {
         const downloadButton = document.getElementById(`down-${gif.id}`);
         const maxButton = document.getElementById(`max-${gif.id}`);
 
-        favoriteButton.addEventListener("click", () => {
-            saveFavorites(gif.id)
+        favoriteButton.addEventListener("click", (event) => {
+            event.stopPropagation()
+            saveFavorites(gif)
+            favoriteButton.src = "../images/common/icon-fav-active.svg"
         })
 
-        downloadButton.addEventListener("click", async () => {
+        downloadButton.addEventListener("click", async (event) => {
+            event.stopPropagation()
             const gifo = await getGif(gif.id)
             await downloadGif(gifo.data.images.downsized.url)
         })
 
-        maxButton.addEventListener("click", () => {
+        maxButton.addEventListener("click", (event) => {
+            event.stopPropagation()
             maximizeGif(gif)
         })
 
-        gifContainer.addEventListener("click", () => {
+        const card = document.getElementById(`${gif.id}-card`)
+
+        card.addEventListener("click", () => {
             maximizeGif(gif)
         })
 
