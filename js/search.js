@@ -79,7 +79,6 @@ const getResults = async (term) => {
     separator2.style.display = "block"
     resultTitle.innerHTML = term
     const gifs = await searchByTerm(term, 43)
-    console.log(gifs)
     cleanContainer("resultGifs")
     if (gifs.data.length === 0) {
         noResults.style.display = "flex"
@@ -91,7 +90,7 @@ const getResults = async (term) => {
         globalTerm = term;
         noResults.style.display = "none"
         resultsGifs.style.display = "grid"
-        fillGifs(gifs.data, 'resultGifs', false)
+        fillGifs(gifs.data, 'resultGifs')
         if (gifs.pagination.count + gifs.pagination.offset < gifs.pagination.total_count) {
             showMoreButton.style.display = "block"
         }

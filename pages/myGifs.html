@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/trending.css">
     <link rel="stylesheet" href="../styles/gif.css">
     <link rel="stylesheet" href="../styles/myGifs.css">
+    <link rel="stylesheet" href="../styles/modal.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
@@ -34,9 +35,7 @@
                 <img src="../images/myGifs/icon-mis-gifos.svg" alt="icon-myGifs">
                 <h1 id="favorites-title" class="sub-title">Mis GIFOS</h1>
             </div>
-            <div id="myGifsContainer">
-
-            </div>
+            <div id="myGifsContainer" class="gifsContainer"></div>
         </section>
         <section id="trending">
             <section id="trending-title-container">
@@ -63,6 +62,8 @@
         <p>© GIFOS 2020 All Rights Reserved.</p>
     </footer>
     <div class="top-line"></div>
+    <script src="../js/favorites/favorites.js"></script>
+    <script src="../js/gifMethods.js"></script>
     <script src="../js/theme.js"> </script>
     <script src="../js/localStorage.js"> </script>
     <script src="../js/trending.js"> </script>

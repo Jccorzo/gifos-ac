@@ -15,3 +15,7 @@
     flex-direction: column;
     align-items: center;
 }
+
+#favoritesContainer {
+    margin: 3% 0;
+}

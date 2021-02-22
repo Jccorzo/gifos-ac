@@ -1,4 +1,4 @@
 (async () => {
     const trendingGifs = await getTrendingGifs()
-    fillGifs(trendingGifs.data, 'trending-gif-container', true)
+    fillTrending(trendingGifs.data, 'trending-gif-container')
 })()

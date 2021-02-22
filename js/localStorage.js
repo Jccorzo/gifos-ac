@@ -12,21 +12,3 @@ const saveGif = (id) => {
         setItem("gifs", id)
     }
 }
-
-const saveFavorites = (gif) => {
-    const gifs = getItem('favorites')
-    if (gifs) {
-        setItem("favorites", JSON.stringify([...JSON.parse(gifs), gif]))
-    } else {
-        setItem("favorites", JSON.stringify([gif]))
-    }
-}
-
-const getFavorites = () => {
-    const favorites = getItem("favorites")
-    if (favorites) {
-        return JSON.parse(favorites)
-    } else {
-        return null
-    }
-}
