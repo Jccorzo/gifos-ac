@@ -15,6 +15,7 @@ const showMoreButton = document.getElementById("showMore");
 const noResults = document.getElementById("noResults");
 const resultsGifs = document.getElementById("resultGifs");
 const trendingSuggests = document.getElementById("trendingSuggests");
+const changeThemeButton = document.getElementById("change-theme");
 
 showMoreButton.addEventListener("click", async () => {
     await showMore(globalTerm,initialOffset)
@@ -127,3 +128,14 @@ const showMore = async (term, offset) => {
         })
     })
 })()
+
+const changeTheme = () => {
+    const navContainer = document.getElementById("nav-link")
+    navContainer.classList.toggle("backgroundGray")
+    const lines = document.getElementsByClassName("top-line")
+    for (let line of lines) {
+        line.classList.toggle("backgroundDark");
+    }
+}
+
+changeThemeButton.addEventListener("click", changeTheme)

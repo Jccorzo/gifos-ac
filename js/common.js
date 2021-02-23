@@ -299,10 +299,10 @@ const fillMyGifs = async (gifs, containerId) => {
 
         const deleteGifFunctionAndRemoveFromContainer = (event) => {
             event.stopPropagation()
-            deleteFavorites(gif)
+            deleteMyGif(gif)
             gifContainer.remove()
             if (gifsContainer.childNodes.length === 0) {
-                favoritesContainer.setAttribute("style", "display: flex;")
+                gifsContainer.setAttribute("style", "display: flex;")
                 gifsContainer.innerHTML = `
                     <div id="noResultsContainer">
                         <img src="../images/myGifs/icon-mis-gifos-sin-contenido.svg" alt="icon gifos sin contenido">

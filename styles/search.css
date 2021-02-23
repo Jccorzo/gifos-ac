@@ -171,6 +171,7 @@
 #trendingSuggests {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center
 }
 
 .trendSuggest {
@@ -202,5 +203,9 @@
 
     #resultTitle {
         font-size: 35px;
+    }
+
+    #trendingSuggests{
+        justify-content: unset;
     }
 }

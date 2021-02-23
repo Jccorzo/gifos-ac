@@ -1,8 +1,8 @@
 .gif {
     background-repeat: no-repeat;
     background-size: contain;
-    width: 156px;
-    height: 120px;
+    height: 156px;
+    width: 120px;
     position: relative;
     margin: 15px;
 }
@@ -17,8 +17,8 @@
 }
 
 .gif-image {
-    width: 156px;
-    height: 120px;
+    height: 156px;
+    width: 120px;
 }
 
 .gifsContainer { 

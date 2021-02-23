@@ -6,7 +6,7 @@ const showMoreFavorites = () => {
     const favoritesFilter = favorites.filter((_, index) => index >= initialOffset && index < initialOffset + 12)
     fillFavorites(favoritesFilter, "favoritesContainer")
     if (favorites.length > initialOffset + 12) {
-        initialOffset += 24
+        initialOffset += 12
     } else {
         showMoreButton.style.display = "none"
     }

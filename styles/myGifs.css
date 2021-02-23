@@ -4,3 +4,13 @@
     margin: 1% auto;
     align-items: center;
 }
+
+#myGifs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#myGifsContainer {
+    margin: 3% 0;
+}

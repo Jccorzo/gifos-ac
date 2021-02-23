@@ -481,3 +481,16 @@ footer .fa {
     margin: 0 84px;
   }
 }
+
+
+.backgroundDark {
+  background-color: #000000;
+}
+
+.backgroundGray {
+  background-color:#37383C;
+}
+
+.textDark {
+  color: white;
+}
