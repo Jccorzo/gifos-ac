@@ -64,7 +64,7 @@
     align-items: center;
 }
 
-.search-trending-text > p:nth-child(1) {
+.trendingTitleText {
     color: var(--main-color);
     font-family: var(--montserrat);
     font-weight: bold;

@@ -1,13 +1,13 @@
-#new-gift-button { 
+.new-gift-button { 
     background-color: #9CAFC3;
     border: none;
 }
 
-#new-gift-button::before { 
+.new-gift-button::before { 
     background-color: white;
 }
 
-#new-gift-button::after { 
+.new-gift-button::after { 
     background-color: white;
 }
 

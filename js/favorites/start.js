@@ -1,5 +1,6 @@
 const showMoreButton = document.getElementById("showMore");
 let initialOffset = 12;
+const changeThemeButton = document.getElementById("change-theme");
 
 const showMoreFavorites = () => {
     const favorites = getFavorites('favorites');
@@ -32,3 +33,46 @@ const showMoreFavorites = () => {
         `
     }
 })()
+
+const changeTheme = () => {
+
+    if(changeThemeButton.textContent === "Modo Nocturno"){
+        changeThemeButton.innerHTML = "Modo Diurno"
+    }else {
+        changeThemeButton.innerHTML = "Modo Nocturno"
+    }
+    const lines = document.getElementsByClassName("top-line")
+    for (let line of lines) {
+        line.classList.toggle("backgroundDark");
+    }
+    const ps = document.getElementsByTagName("p");
+    for (let p of ps){
+        p.classList.toggle("textDark")
+    }
+    const hs = document.getElementsByTagName("h1")
+    for (let h1 of hs){
+        h1.classList.toggle("textDark")
+    }
+    const as = document.getElementsByTagName("a")
+    for (let a of as){
+        a.classList.toggle("textDark")
+    }
+
+    const body = document.getElementById("body")
+    body.classList.toggle("backgroundGray")
+    const navContainer = document.getElementById("nav-link")
+    navContainer.classList.toggle("backgroundNav")
+
+    const trending = document.getElementById("trending")
+    trending.classList.toggle("backgroundDark2")
+
+    const buttons = document.getElementsByTagName("button")
+    for(let button of buttons) {
+        button.classList.toggle("buttonDark")
+    }
+
+    const changePageButton = document.getElementById("new-gift-button")
+    changePageButton.classList.toggle("new-gift-button-dark")
+}
+
+changeThemeButton.addEventListener("click", changeTheme)

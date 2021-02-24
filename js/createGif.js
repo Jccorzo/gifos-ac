@@ -15,7 +15,8 @@ const uploadText = document.getElementById("uploadText");
 const uploadImage = document.getElementById("uploadImage");
 const optionsCard = document.getElementById("optionsCard");
 const link = document.getElementById("link")
-const download = document.getElementById("download")
+const download = document.getElementById("download");
+const changeThemeButton = document.getElementById("change-theme");
 
 let n = 0, h = 0, m = 0, s = 0;
 let recorder;
@@ -141,3 +142,50 @@ download.addEventListener("click", async () => {
 link.addEventListener("click", openGifUrl)
 start.addEventListener("click", startExperience)
 repeat.addEventListener("click", repeatRecord)
+
+
+const changeTheme = () => {
+
+    const peliculaSvg = document.getElementById("peliculaSvg");
+    const cameraImage = document.getElementById("cameraImage");
+
+    if(changeThemeButton.textContent === "Modo Nocturno"){
+        changeThemeButton.innerHTML = "Modo Diurno"
+        peliculaSvg.src = "../images/createGif/pelicula-modo-noc.svg"
+        cameraImage.src = "../images/createGif/camara-modo-noc.svg"
+    }else {
+        changeThemeButton.innerHTML = "Modo Nocturno"
+        peliculaSvg.src = "../images/createGif/pelicula.svg"
+        cameraImage.src = "../images/createGif/camara.svg"
+    }
+    const lines = document.getElementsByClassName("top-line")
+    for (let line of lines) {
+        line.classList.toggle("backgroundDark");
+    }
+    const ps = document.getElementsByTagName("p");
+    for (let p of ps){
+        p.classList.toggle("textDark")
+    }
+    const hs = document.getElementsByTagName("h1")
+    for (let h1 of hs){
+        h1.classList.toggle("textDark")
+    }
+    const as = document.getElementsByTagName("a")
+    for (let a of as){
+        a.classList.toggle("textDark")
+    }
+
+    const buttons = document.getElementsByTagName("button")
+    for(let button of buttons) {
+        button.classList.toggle("buttonDark")
+    }
+    const body = document.getElementById("body")
+    body.classList.toggle("backgroundGray")
+    const navContainer = document.getElementById("nav-link")
+    navContainer.classList.toggle("backgroundNav")
+
+    const changePageButton = document.getElementById("new-gift-button")
+    changePageButton.classList.toggle("new-gift-button-dark")
+}
+
+changeThemeButton.addEventListener("click", changeTheme)

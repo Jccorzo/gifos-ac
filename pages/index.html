@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIFOS</title>
-    <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/search.css">
     <link rel="stylesheet" href="../styles/trending.css">
+    <link rel="stylesheet" href="../styles/common.css">
     <link rel="stylesheet" href="../styles/gif.css">
     <link rel="stylesheet" href="../styles/modal.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- 8OeHZODT4rHrotAQ1SMXtD2uHmKocz1J = GIFOS API KEY -->
 </head>
-<body>
+<body id="body">
     <div class="top-line"></div>
-    <header>
+    <header id="header">
         <a href="./index.html"><img src="../images/header/logo-desktop.svg" alt="logo"></a>
         <input id="btn-menu" type="checkbox">
             <label id="btn-menu-label" for="btn-menu"><span class="navicon"></span></label>
-        <nav id="nav-link">
+        <nav id="nav-link" class="nav-link">
             <ul>
                 <li><a id="change-theme">Modo Nocturno</a><hr class="line"/></li>
                 <li><a href="./favorites.html" id="change-to-favorites">Favoritos</a><hr class="line"/></li>
                 <li><a href="./myGifs.html" id="change-to-myGifs" >Mis GIFOS</a><hr class="line"/></li>
-                <li><a href="./createGift.html" id="change-to-create-gif"><i id="new-gift-button"></i></a></li>
+                <li><a href="./createGift.html" id="change-to-create-gif"><i id="new-gift-button" class="new-gift-button"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div id="search-trending-text" class="search-trending-text">
-                    <p>Trending:</p>
+                    <p class="trendingTitleText">Trending:</p>
                     <div id="trendingSuggests"></div>
                 </div>
                 <hr id="separator2" class="separator">
@@ -61,7 +61,7 @@
                 <button id="showMore" class="showMore">VER MÁS</button>
             </section>
         </section>
-        <section id="trending">
+        <section id="trending" class="trending">
             <section id="trending-title-container">
                 <h1 class="trending-title">Trending GIFOS</h1>
                 <p class="trending-text">Mira los últimos GIFOS de nuestra comunidad.</p>

@@ -115,7 +115,7 @@ header img {
   transform: rotate(-90deg);
 }
 
-#nav-link {
+.nav-link {
   opacity: 0;
   visibility: hidden;
   height: 0;
@@ -127,7 +127,7 @@ header img {
   padding-top: 17px;
 }
 
-#nav-link li {
+.nav-link li {
   font-size: 16px;
   color: white;
   font-family: "IBM Plex Mono";
@@ -176,15 +176,16 @@ header hr {
   visibility: hidden;
 }
 
-#new-gift-button {
+.new-gift-button {
   height: 54px;
   width: 54px;
   border: 1px solid var(--main-color);
   border-radius: 27px;
   position: relative;
+  background-color: white;
 }
 
-#new-gift-button::after {
+.new-gift-button::after {
   content: "";
   height: 16px;
   width: 3px;
@@ -195,7 +196,7 @@ header hr {
   right: 24px;
 }
 
-#new-gift-button::before {
+.new-gift-button::before {
   content: "";
   height: 16px;
   width: 3px;
@@ -207,21 +208,21 @@ header hr {
   transform: rotate(90deg);
 }
 
-#new-gift-button:hover {
+.new-gift-button:hover {
   background-color: var(--main-color);
 }
 
-#new-gift-button:hover::after {
+.new-gift-button:hover::after {
   content: "";
   background-color: white;
 }
 
-#new-gift-button:hover::before {
+.new-gift-button:hover::before {
   content: "";
   background-color: white;
 }
 
-#new-gift-button:active {
+.new-gift-button:active {
   background-color: #9cafc3;
   border: none;
 }
@@ -421,7 +422,7 @@ footer .fa {
     display: none;
   }
 
-  #nav-link {
+  .nav-link {
     visibility: visible;
     opacity: 1;
     height: 100%;
@@ -429,15 +430,16 @@ footer .fa {
     background-color: white;
     transition: none;
   }
-  #nav-link ul {
+  .nav-link ul {
     display: flex;
     list-style: none;
   }
-  #nav-link ul li {
+
+  .nav-link ul li {
     color: #060a24;
   }
 
-  #btn-menu:checked ~ #nav-link {
+  #btn-menu:checked ~ .nav-link {
     visibility: visible;
     opacity: 1;
     height: fit-content;
@@ -487,10 +489,48 @@ footer .fa {
   background-color: #000000;
 }
 
+.backgroundDark2 {
+  background-color: #222326;
+}
+
 .backgroundGray {
   background-color:#37383C;
 }
 
 .textDark {
   color: white;
+}
+
+.backgroundNav {
+  background-color: #222326;
+}
+
+.buttonDark {
+  color: white;
+  border: 1px solid white;
+  background-color: #37383C;
+}
+
+.new-gift-button-dark {
+  background-color: #37383C;
+  border: 1px solid white;
+}
+
+.new-gift-button-dark::after, .new-gift-button-dark::before {
+  background-color: white;
+}
+
+.new-gift-button-dark:hover {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.new-gift-button-dark:hover::after, .new-gift-button-dark:hover::before {
+  background-color: #000000;
+}
+
+@media screen and (min-width:768px) {
+  .backgroundNav {
+    background-color: #37383C;
+  }
 }
